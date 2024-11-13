@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+</head>
+<body>
+    <h1> Prime Number</h1>
+    <script>
+    // isPrime Function
+        function isPrime(num){
+            if ((num % 2 == 0 && num > 2) || num <= 1){
+                return false;
+            }
+            const s = Math.sqrt(num);
+            for (let i = 3; i <= s; i += 2) {
+                if (num % i === 0){
+                    return false;
+                }
+            }
+            return true; 
+        }
+
+        
+        function findPrimesInRange(start, end) {
+            if (typeof start !== "number" || typeof end !== "number" || start > end) {
+                messageFormatter("Invalid input. Please provide a valid range (arrary of two numbers.)");
+                return;
+            }
+            //  reuse isPrime() here
+            let primes = [];
+            for (let i = start; i <= end; i++) {
+                if (isPrime(i)) {
+                    primes.push(i);
+                }
+            }
+            messageFormatter(`Primes between ${start} and ${end}: [${primes.join(', ')}]`);
+        }
+
+        // Polymorphic messageFormatter function
+        function messageFormatter(input) {
+            console.log(input);
+        }
+
+        function checkPrimeNum(num) {
+            if (isPrime(num)) {
+                messageFormatter(`${num} is a prime number.`);
+            } else {
+                messageFormatter(`${num} is NOT a prime number.`);
+            }
+        }
+
+        // Instructor's test cases
+        // ===== ===== ===== ===== =====
+        checkPrimeNum(2);
+         // Expected Output: 2 is a prime number.
+        checkPrimeNum(1);
+         // Expected Output: 1 is NOT a prime number.
+        checkPrimeNum(13);
+         // Expected Output: 13 is a prime number.
+        checkPrimeNum(25);
+         // Expected Output: 25 is NOT a prime number.
+        findPrimesInRange(10, 20);
+         // Expected Output: Primes between 10 and 20: [11, 13, 17, 19]
+        findPrimesInRange(30, 50);
+         // Expected Output: Primes between 30 and 50: [31, 37, 41, 43, 47]
+        findPrimesInRange('test');
+         // Expected Output: Invalid input. Please provide a valid range (two numbers where start <= end).
+    </script>
+</body>
+
+</html>
