@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="shopping_cart.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping Cart with Discounts</h1>
+        <form id="cartForm">
+            <input type="text" id="itemName" placeholder="Item Name" required>
+            <input type="number" id="price" placeholder="Price" required>
+            <input type="number" id="quantity" placeholder="Quantity" required>
+            <button type="button" id="add_item">Add Item</button>
+            <input type="number" id="discount" placeholder="Discount (%)" required>
+            <button type="button" id="apply_discount">Apply Discount</button>
+        </form>
+        <div class="cart-items" id="cartItems">
+            
+        </div>
+        <p class="total" id="totalPrice">Total: $0.00</p>
+    </div>
+
+    <script>
+        let cart = [];
+
+        // Add item to cart
+        document.getElementById('add_item').addEventListener('click', function() {
+            const itemNameInput = document.getElementById('itemName');
+            const priceInput = document.getElementById('price');
+            const quantityInput = document.getElementById('quantity');
+
+            const itemName = itemNameInput.value.trim();
+            const price = parseFloat(priceInput.value);
+            const quantity = parseInt(quantityInput.value);
+
+            if (itemName && !isNaN(price) && !isNaN(quantity) && quantity > 0) {
+                cart.push({ name: itemName, price: price, quantity: quantity });
+                displayCartItems();
+                calculateTotalPrice();
+
+                
+                itemNameInput.value = '';
+                priceInput.value = '';
+                quantityInput.value = '';
+            } else {
+                alert("Please fill out all fields correctly.");
+            }
+        });
+
+        // Apply discount
+        document.getElementById('apply_discount').addEventListener('click', function() {
+            const discount = parseFloat(document.getElementById('discount').value);
+            if (!isNaN(discount) && discount > 0 && discount <= 100) {
+                applyDiscount(discount);
+            }
+        });
+
+        // Display cart items
+        function displayCartItems() {
+            const cartItemsDiv = document.getElementById('cartItems');
+            cartItemsDiv.innerHTML = '';
+
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `
+                    ${item.name} - $${item.price.toFixed(2)} x ${item.quantity}
+                    <button onclick="removeItem(${index})">Remove</button>
+                `;
+                cartItemsDiv.appendChild(itemDiv);
+            });
+        }
+
+        // Remove item from cart
+        function removeItem(index) {
+            cart.splice(index, 1);
+            displayCartItems();
+            calculateTotalPrice();
+        }
+
+        // Calculate total price
+        function calculateTotalPrice() {
+            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            document.getElementById('totalPrice').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        // Apply discount
+        function applyDiscount(discount) {
+            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            const discountedTotal = total - (total * (discount / 100));
+            document.getElementById('totalPrice').textContent = `Total after Discount: $${discountedTotal.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
