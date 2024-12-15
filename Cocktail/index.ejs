@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Unique Cocktail App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fff3f3;
+            color: #333;
+        }
+        img {
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: rgb(173, 239, 251);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #f88d7c;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Try This Cocktail!</h1>
+        <h2><%= cocktail.strDrink %></h2>
+        <img src="<%= cocktail.strDrinkThumb %>" alt="Cocktail Image" width="100%">
+        <h3>Ingredients:</h3>
+        <ul>
+            <% for(let i = 1; i <= 15; i++) { %>
+                <% if (cocktail['strIngredient' + i]) { %>
+                    <li><%= cocktail['strIngredient' + i] %> 
+                    <% if (cocktail['strMeasure' + i]) { %>
+                        - <%= cocktail['strMeasure' + i] %>
+                    <% } %>
+                    </li>
+                <% } %>
+            <% } %>
+        </ul>
+        <h3>Instructions:</h3>
+        <p><%= cocktail.strInstructions %></p>
+    </div>
+</body>
+</html>
