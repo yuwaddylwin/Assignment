@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu's Portfolio Website</title>
+</head>
+<link href="Portfolio_Website.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<body>
+    <section id="header">
+        <nav>
+            <div class="left">
+                <a>Yu Waddy Lwin</a>
+            </div>
+            <div class="right">
+                <a href="#about_me">About me</a>
+                <a href="#projects_showcase">Projects Showcase</a>
+                <a href="#contact_section">Contact</a>
+                <a href="#blog_section">Experiences</a>
+            </div>
+        </nav>
+    </section>
+
+    <!-- About me Part -->
+    <section id="about_me">
+        <img id ="mypic" src="Fun Photo.JPG" alt="Yu Waddy Lwin">
+        <div id="section1">
+            <h1 class="intro"> Hey! I'm</h1>
+            <h1> Yu Waddy Lwin</h1>
+            <i>Second-Year Computer Science Student</i>
+            <br>
+            <p>I have experienced with Python, HTML, CSS, JavaScript and Database SQL.</p>
+            <p>Currently workind on Node Js, Express Js.</p>
+            <br>
+            <a id ="github_icon" href="https://github.com/yuwaddylwin" target="_blank">
+                <i class="fa-brands fa-github"></i>
+                
+            </a> 
+            <a id="linkedin_icon" href="https://www.linkedin.com/in/yuwaddylwin" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+                
+            </a>
+            <a id="insta_icon" href="https://www.instagram.com/yuwaddyl_win/profilecard/?igsh=eXdtb3ByYTBnY3lw" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+                
+            </a>
+        </div>
+    </section>
+    
+    <!-- Projects Showcase Part -->
+    
+    <section id="projects_showcase">
+        <h2>Projects Showcase</h2>
+        <img id="python_pic" src="Python_project.png" alt="Python Project">
+        <div id="section2">
+            <h2>Student Management System</h2>
+            <p> Python Project manages student records using a CSV file. 
+                It allows you to display all students, add new entries, search for specific students, 
+                update existing records, delete unwanted entries, and exit the program seamlessly.</p><br>
+            <a class="project_icons" href="https://github.com/yuwaddylwin/Assignment/tree/fa70483ef4110149fb56dda8bfe2f0de0581e9ec/tem" target="_blank">
+                <i class="fa-brands fa-github"></i>
+                <span>Project link</span>
+                    
+            </a>
+        </div>
+     
+
+        <img id="database_pic" src="Database Project.png" alt="Database Project">
+        <div id="section3">
+            <h2>Online Shopping Database</h2>
+            <p>Designed and developed an Online Shopping Database in Microsoft Access, featuring fully 
+                integrated modules for customers, products, orders, payments, and shipping</p>
+            <a class="project_icons" href="https://github.com/yuwaddylwin/Assignment/tree/6fdfa3eacf6cca144bca46a2030024e38dd2c5c9/Database" target="_blank"><br>
+                <i class="fa-brands fa-github"></i>
+                <span> Project link</span>
+            </a>
+        </div>
+
+        <img id="data" src ="Data Structure & Algorithms Project.png" alt="DataStructure Project">
+        <div id="section4">
+            <h2>Food Delivery System With Data Structure & Algorithms</h2>
+            <p>Developed a Food Delivery Management System using Binary Search Tree (BST) for efficient 
+                order management. The system allows adding, finding, updating, and canceling orders, 
+                supports online payments, and provides a smooth user experience with an intuitive exit feature</p>
+            <a class="project_icons" href="https://github.com/yuwaddylwin/Assignment/blob/0d012dd9afc6290fbfc91f30ff91b95b2b4bc3a0/FoodDelivery.py" target="_blank"><br>
+                <i class="fa-brands fa-github"></i>
+                <span> Project link</span>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact_section">
+        <h2>Contact Me</h2>
+        <div id="contact_boxes">
+            <form id="forms">
+                <label for="Email">Email</label>
+                <input type="email" id="email" placeholder="john@gmail.com">
+    
+                <label for="Name">Name</label>
+                <input type="text" id="name" placeholder="John">
+    
+                <label for="Message">Message</label>
+                <textarea id="message" rows="10" placeholder="Write your message"></textarea>
+    
+                <button id="btn" type="sumbit">Send <i class="fa-solid fa-paper-plane" style="color: white;"></i></button>
+                
+            </form>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog_section">
+        <section class="blog-section">
+            <h2>My Learning Journey <i class="fa-solid fa-rocket"></i></h2><br>
+            <p>I began my programming journey right after graduating from high school. My first step into this exciting world was enrolling in <a href="https://cs50.harvard.edu/python/" target="_blank">Harvard’s CS50 Python course</a>. It was a fantastic introduction that gave me a solid foundation, and I spent countless hours solving problem sets, which helped me sharpen my problem-solving skills.</p>
+            <p>When I joined university, I quickly realized that learning programming goes far beyond attending lectures and completing small projects. <span class="highlight">True mastery comes from hands-on experience and working on multiple projects.</span> Each project taught me something new and deepened my understanding of programming concepts.</p>
+            <p>As my studies progressed, I delved into various subjects:</p>
+            <ul>
+                <li><strong>Databases</strong>: I learned how databases work and understood their critical role in organizing and managing data effectively. This knowledge opened my eyes to the importance of data in almost every field today.</li>
+                <li><strong>Data Structures and Algorithms</strong>: This subject challenged my logical thinking and problem-solving abilities. It taught me how to write efficient and optimized code—a skill essential for any programmer.</li>
+                <li><strong>Blockchain Technology</strong>: Understanding how blockchain works was both fascinating and eye-opening. It’s incredible to see how this technology is revolutionizing industries and shaping the future.</li>
+                <li><strong>Mathematics</strong>: Programming and math go hand in hand. I’ve worked through various mathematical concepts that have strengthened my ability to write better algorithms and solve complex problems.</li>
+            </ul>
+            <blockquote>
+                "Currently, I am exploring the world of Web Development. Learning HTML, CSS, and JavaScript has been exciting as well as Node js and Express js"
+            </blockquote>
+            <p>This journey hasn’t been easy, but it has been incredibly rewarding. Each step, from Python to web development, has shaped my skills and given me confidence. I know there is much more to learn, and I am ready to face the challenges ahead. Because in the end, I believe in myself, and I know I can do this.</p>
+        </section>
+
+    </section>
+    <a href="mailto:yuwaddylwin.2004@gmail.com" id="email_icon">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+</body>
+</html>
